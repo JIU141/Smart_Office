@@ -1,31 +1,19 @@
 <script setup lang="ts">
-import {isCollapse} from '@/components/layout/isCollapse.ts'
+
 </script>
 
 <template>
   <el-header>
-    <!--    图标-->
-    <el-icon @click="isCollapse = !isCollapse"><IEpExpand v-show="isCollapse" /><IEpFold v-show="!isCollapse" /></el-icon>
-    <!--    面包屑-->
-    <el-breadcrumb separator="/">
-      <el-breadcrumb-item :to="{ path: '/' }">homepage</el-breadcrumb-item>
-      <el-breadcrumb-item>
-        <a href="/">promotion management</a>
-      </el-breadcrumb-item>
-      <el-breadcrumb-item>promotion list</el-breadcrumb-item>
-      <el-breadcrumb-item>promotion detail</el-breadcrumb-item>
-    </el-breadcrumb>
-    <!--    下拉菜单-->
+   <!--    下拉菜单-->
     <el-dropdown>
       <span class="el-dropdown-link">
-        <el-avatar :size="32" :src="'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'" />
+        <el-avatar :size="28" :src="'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'" />
         <el-icon class="el-icon--right">
           <IEparrow-down />
         </el-icon>
       </span>
       <template #dropdown>
         <el-dropdown-menu>
-          <el-dropdown-item>用户姓名</el-dropdown-item>
           <el-dropdown-item divided>退出登录 </el-dropdown-item>
         </el-dropdown-menu>
       </template>
@@ -35,11 +23,13 @@ import {isCollapse} from '@/components/layout/isCollapse.ts'
 
 <style lang="scss" scoped>
 .el-header{
+  height: 48px;
   display: flex;
   align-items: center;
-  background-color: rgb(221.7, 222.6, 224.4);
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
   .el-icon{
-    margin-right: 20px;
+    margin-right: 5px;
   }
 }
 .el-dropdown{

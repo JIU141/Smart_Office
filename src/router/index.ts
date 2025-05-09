@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Applayout from '@/components/layout/applayout.vue'
 import indexView from '@/views/indexView.vue'
+import homeview from '@/views/HomeView.vue'
+import register from '@/views/Register.vue'
+import login from '@/views/Login.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,24 +11,35 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Applayout,
+      component: homeview
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: register
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login
+    },
+    {
+      path: '/shouye',
+      name: 'shouye',
+      component: Applayout, // 保持 Applayout 作为组件
       children: [
         {
-          path:'',
-          component:indexView,
+          path: '',
+          component: indexView, // 默认子路由
         },
         {
-          path: '/about',
-          name: 'about',
-          // route level code-splitting
-          // this generates a separate chunk (About.[hash].js) for this route
-          // which is lazy-loaded when the route is visited.
+          path: '/planner',
+          name: 'planner',
           component: () => import('../views/AboutView.vue'),
         },
       ]
     },
-
-  ],
+  ]
 })
 
 export default router
